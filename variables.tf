@@ -26,8 +26,7 @@ variable "subscription_ids" {
 
 variable "allow_virtual_network_access" {
   description = "Controls if the VMs in the remote virtual network can access VMs in the local virtual network. Defaults to false."
-  type        = "list"
-  default     = ["false", "false"]
+  default     = true
 }
 
 variable "allow_forwarded_traffic" {
