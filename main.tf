@@ -38,6 +38,7 @@ data "azurerm_virtual_network" "vnet2" {
 }
 
 resource "azurerm_virtual_network_peering" "vnet_peer_1" {
+  provider                     = "azurerm.sub1"
   name                         = "${var.vnet_peering_names[0]}"
   resource_group_name          = "${data.azurerm_resource_group.rg1.name}"
   virtual_network_name         = "${data.azurerm_virtual_network.vnet1.name}"
@@ -49,6 +50,7 @@ resource "azurerm_virtual_network_peering" "vnet_peer_1" {
 }
 
 resource "azurerm_virtual_network_peering" "vnet_peer_2" {
+  provider                     = "azurerm.sub2"
   name                         = "${var.vnet_peering_names[1]}"
   resource_group_name          = "${data.azurerm_resource_group.rg2.name}"
   virtual_network_name         = "${data.azurerm_virtual_network.vnet2.name}"
